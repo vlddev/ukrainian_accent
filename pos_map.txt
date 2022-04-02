@@ -1,0 +1,28 @@
+5	ж	іменник жіночого роду
+6	жі	іменник жіночого роду, істота
+7	чі	іменник чоловічого роду, істота
+8	ч	іменник чоловічого роду
+
+
+select inf.type, inf.inf, wf.wf, wf.fid
+from inf, wf 
+where wf.fk_inf = inf.id
+   and inf.inf = ?
+order by wf.fid
+
+
+5_1	nfsn
+5_2	nfsg
+5_3	nfsd
+5_4	nfsa
+5_5	nfsi
+5_6	nfsl
+5_7	nfsv
+5_8	nfpn
+5_9	nfpg
+5_10	nfpd
+5_11	nfpa
+5_12	nfpi
+5_13	nfpl
+5_14	nfpv
+
