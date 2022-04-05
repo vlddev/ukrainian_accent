@@ -1,4 +1,5 @@
 import requests
+import accent_db
 
 def featureToUkTag(posTag, featureMap):
     ret = ''
@@ -20,16 +21,21 @@ def featureToUkTag(posTag, featureMap):
 class TaggedToken:
     def __init__(self, wf, inf, posTag, featureMap):
         self.wf = wf
+        self.accent = wf
         self.inf = inf
         self.posTag = posTag
-        self.ukTag = featureToUkTag(posTag, featureMap)
+        self.ukTag = featureToUkTag(posTag, featureMap).lower()
 
     def __repr__(self):
-        return f'TaggedToken(wf={self.wf}, inf={self.inf}, posTag={self.posTag}, ukTag={self.ukTag})'
+        return f'TaggedToken(wf={self.wf}, accent={self.accent}, inf={self.inf}, posTag={self.posTag}, ukTag={self.ukTag})'
+
+    def setAccent(self, accent):
+        self.accent = accent
 
 class UDPipe:
     def __init__(self, url):
         self.url = url
+        self.accentDb = accent_db.AccentDb()
 
     def tokenize(self, sent):
         ret = []
@@ -42,7 +48,11 @@ class UDPipe:
             if line.startswith("#") or len(line) < 2: continue
             print(line)
             vals = line.split('\t')
-            ret.append(TaggedToken(vals[1], vals[2], vals[3], vals[5]))
+            taggedToken = TaggedToken(vals[1], vals[2], vals[3], vals[5])
+            # TODO optimize 
+            wfAccent = self.accentDb.getAccent(taggedToken.wf, taggedToken.ukTag)
+            taggedToken.setAccent(wfAccent) 
+            ret.append(taggedToken)
         return ret
 
 
@@ -55,4 +65,4 @@ data = "сидить, як чорт у болоті."
 data = "Немов снігом за шкуру сипнуло."
 
 udpipe = UDPipe(udpipe_url)
-print(udpipe.tokenize(data))
+[print(x) for x in udpipe.tokenize(data)]

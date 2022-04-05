@@ -26,3 +26,18 @@ order by wf.fid
 5_13	nfpl
 5_14	nfpv
 
+INSERT INTO fidmap (fid, udfid) 
+VALUES ('5_1', 'nfsn'),
+('5_2', 'nfsg'),
+('5_3', 'nfsd'),
+('5_4', 'nfsa'),
+('5_5', 'nfsi'),
+('5_6', 'nfsl'),
+('5_7', 'nfsv'),
+('5_8', 'nfpn'),
+('5_9', 'nfpg'),
+('5_10', 'nfpd'),
+('5_11', 'nfpa'),
+('5_12', 'nfpi'),
+('5_13', 'nfpl'),
+('5_14', 'nfpv');
