@@ -79,8 +79,9 @@ data = "співачки зізналися, що іноді можуть пок
 data = "що ти робиш, брате."
 data = "сидить, як чорт у болоті."
 data = "Немов снігом за шкуру сипнуло."
+data = "Ми тримали гострі ножі."
 
 udpipe = UDPipe()
-# [print(x) for x in udpipe.tokenize(data)]
+[print(x) for x in udpipe.tokenize(data)]
 print(udpipe.setAccent(data))
 """
