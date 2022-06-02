@@ -12,8 +12,8 @@ class AccentDb:
     def getAccent(self, wf, fid):
         ret = wf
         cur = self.con.cursor()
-        # TODO: add mapping table fid --> fid
-        cur.execute("""select wf.accent from wf, fidmap 
+        cur.execute("""select distinct wf.accent 
+                        from wf, fidmap 
                         where wf = ? and wf.fid = fidmap.fid and fidmap.udfid = ?""", (wf,fid))
         data = cur.fetchall()
         if len(data) == 1 and data[0][0] == 'empty_':

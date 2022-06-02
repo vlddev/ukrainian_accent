@@ -135,3 +135,74 @@ VALUES ('11_1', 'amsn'),
 ('11_22', 'a-pa'),
 ('11_23', 'a-pi'),
 ('11_24', 'a-pl');
+
+35	д/д	дієслово доконаного виду
+36	д	дієслово недоконаного виду
+37	д2	дієслово недоконаного і доконаного виду
+
+      тримали тримати VERB    _       Aspect=Imp|Mood=Ind|Number=Plur|Tense=Past|VerbForm=Fin 0       root    _       _
+      робиш   робити  VERB    _       Aspect=Imp|Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin        0       root    _       SpaceAfter=No
+      співає  співати VERB    _       Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin        0       root    _       _
+      співаю  співати VERB    _       Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin        0       root    _       _
+      співала співати VERB    _       Aspect=Imp|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin      0       root    _       _
+      співав  співати VERB    _       Aspect=Imp|Gender=Masc|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin     0       root    _       _
+      співало співати VERB    _       Aspect=Imp|Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin     0       root    _       _
+      співаєм співати VERB    _       Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin        0       root    _       _
+      співаєш співати VERB    _       Aspect=Imp|Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin        0       root    _       _
+      співають        співати VERB    _       Aspect=Imp|Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin        0       root    _       _
+
+      Співати співати VERB    _       Aspect=Imp|VerbForm=Inf 0       root    _       _
+      Співай  співати VERB    _       Aspect=Imp|Mood=Imp|Number=Sing|Person=2|VerbForm=Fin   0       root    _       SpaceAfter=No
+      співаймо        співати VERB    _       Aspect=Imp|Mood=Imp|Number=Plur|Person=1|VerbForm=Fin   0       root    _       SpaceAfter=No
+      Співайте        співати VERB    _       Aspect=Imp|Mood=Imp|Number=Plur|Person=2|VerbForm=Fin   0       root    _       _
+ 
+3001308	156970	співати	співа"ти	36_1              v----
+3001309	156970	співать	співа"ть	36_1_1
+3001310	156970	співай	співа"й	36_2              v-s2-  (Mood=imperativ)
+3001311	156970	співаймо	співа"ймо	36_3           v-p1-  (Mood=imperativ)
+3001312	156970	співайте	співа"йте	36_4           v-p2-  (Mood=imperativ)
+3001313	156970	співатиму	співа"тиму	36_5        v-s1f
+3001314	156970	співатимемо	співа"тимемо	36_6     v-p1f
+3001315	156970	співатимем	співа"тимем	36_6_1
+3001316	156970	співатимеш	співа"тимеш	36_7        v-s2f
+3001317	156970	співатимете	співа"тимете	36_8     v-p2f
+3001318	156970	співатиме	співа"тиме	36_9        v-s3f
+3001319	156970	співатимуть	співа"тимуть	36_10    v-p3f
+3001320	156970	співаю	співа"ю	36_11             v-s1p
+3001321	156970	співаємо	співа"ємо	36_12          v-p1p
+3001322	156970	співаєм	співа"єм	36_12_1
+3001323	156970	співаєш	співа"єш	36_13             v-s2p
+3001324	156970	співаєте	співа"єте	36_14          v-p2p
+3001325	156970	співає	співа"є	36_15             v-s3p
+3001326	156970	співа	співа"	36_15_1
+3001327	156970	співають	співа"ють	36_16          v-p3p
+3001328	156970	співаючи	співа"ючи	36_18
+3001329	156970	співав	співа"в	36_19             vms-o
+3001330	156970	співала	співа"ла	36_20             vfs-o
+3001331	156970	співало	співа"ло	36_21             vns-o
+3001332	156970	співали	співа"ли	36_22             vfp-o
+3001333	156970	співаний	спі"ваний	36_24
+3001334	156970	співано	спі"вано	36_25
+3001335	156970	співавши	співа"вши	36_26
+
+INSERT INTO fidmap (fid, udfid) 
+VALUES ('36_1', 'v----'),
+('36_2', 'v-s2-'),
+('36_3', 'v-p1-'),
+('36_4', 'v-p2-'),
+('36_5', 'v-s1f'),
+('36_6', 'v-p1f'),
+('36_7', 'v-s2f'),
+('36_8', 'v-p2f'),
+('36_9', 'v-s3f'),
+('36_10', 'v-p3f'),
+('36_11', 'v-s1p'),
+('36_12', 'v-p1p'),
+('36_13', 'v-s2p'),
+('36_14', 'v-p2p'),
+('36_15', 'v-s3p'),
+('36_16', 'v-p3p'),
+('36_19', 'vms-o'),
+('36_20', 'vfs-o'),
+('36_21', 'vns-o'),
+('36_22', 'vfp-o');
