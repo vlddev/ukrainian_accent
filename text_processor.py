@@ -7,7 +7,8 @@ def gen_out_file(filename, suffix='_acc'):
   return "{0}{1}{2}".format(Path.joinpath(p.parent, p.stem), suffix, p.suffix)
 
 def process(file):
-    udpipeProcessor = udpipe.UDPipe()
+    # udpipeProcessor = udpipe.UDPipe()
+    udpipeProcessor = udpipe.UkBert()
     text = ''
     with open(file, "r") as infile:
         text = infile.read()

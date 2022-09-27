@@ -206,3 +206,8 @@ VALUES ('36_1', 'v----'),
 ('36_20', 'vfs-o'),
 ('36_21', 'vns-o'),
 ('36_22', 'vfp-o');
+
+71	присл	прислiвник
+
+INSERT INTO fidmap (fid, udfid) 
+VALUES ('71_1', 'd');
